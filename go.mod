@@ -1,4 +1,4 @@
-module github.com/networkservicemesh/fanout
+module github.com/yeganeahmadnejad/fanout
 
 go 1.14
 
