@@ -33,6 +33,8 @@ import (
 	"github.com/coredns/coredns/plugin/pkg/tls"
 	"github.com/coredns/coredns/plugin/pkg/transport"
 	"github.com/pkg/errors"
+	"github.com/kr/pretty"
+
 )
 
 func init() {
@@ -51,8 +53,9 @@ func setup(c *caddy.Controller) error {
 	if len(f.clients) > maxIPCount {
 		return plugin.Error("fanout", errors.Errorf("more than %d TOs configured: %d", maxIPCount, l))
 	}
-	fmt.Println("f is : ")
-	fmt.Println(f)
+	fmt.Println("fanout is prety: ")
+	pretty.Print(f)
+
 
 	dnsserver.GetConfig(c).AddPlugin(func(next plugin.Handler) plugin.Handler {
 		f.Next = next
