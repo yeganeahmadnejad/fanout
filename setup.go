@@ -51,8 +51,8 @@ func setup(c *caddy.Controller) error {
 	if len(f.clients) > maxIPCount {
 		return plugin.Error("fanout", errors.Errorf("more than %d TOs configured: %d", maxIPCount, l))
 	}
-//fmt.Println("f is : ")
-//fmt.Println(f)
+	fmt.Println("f is : ")
+	fmt.Println(f)
 
 	dnsserver.GetConfig(c).AddPlugin(func(next plugin.Handler) plugin.Handler {
 		f.Next = next
