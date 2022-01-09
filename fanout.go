@@ -63,7 +63,9 @@ func (f *Fanout) AddClient(p Client) {
 	f.clients = append(f.clients, p)
 	f.workerCount++
 }
-
+func (f *Fanout) AddFrom(from string) {
+	f.from = from
+}
 // Name implements plugin.Handler.
 func (f *Fanout) Name() string {
 	return "fanout"
