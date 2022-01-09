@@ -17,7 +17,6 @@
 package fanout
 
 import (
-	"fmt"
 	"io/ioutil"
 	"path/filepath"
 	"strconv"
